@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary: #D87D4A;
+  --secondary: #000000;
+  --tertiary: #FFFFFF;
+  --hover-primary: #FBAF85;
+  --hover-secondary: #4C4C4C; 
+  --hover-tertiary: #000000;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+.colors {
+  color: #000000;
+  color: #D87D4A;
+  color: #101010;
+  color: #F1F1F1;
+  color: #FAFAFA;
+  color: #FBAF85; 
+  color: #FFFFFF;
+}
+.colors2 {
+  color: #4C4C4C;
+}
+
+.primary-button {
+  background-color: var(--primary);
+  color: white;
+  transition: all 350ms ease-in;
+}
+
+.primary-button:hover {
+  background-color: var(--hover-primary);
+}
+
+.secondary-button {
+  background-color: var(--secondary);
+  color: white;
+  transition: all 350ms ease-in;
+}
+
+.secondary-button:hover {
+  background-color: var(--hover-secondary);
+}
+
+.tertiary-button {
+  background-color: var(--tertiary);
+  color: black;
+  border: 1px solid black;
+  transition: all 350ms ease-in;
+}
+
+.tertiary-button:hover {
+  background-color: var(--hover-tertiary);
+  color: white;
+}
+
+/* Typography utilities (Manrope) */
+.h1 {
+  font-weight: 700; /* Bold */
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+
+.h4 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.h5 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.h6 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.overline {
+  font-weight: 400; /* Regular */
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-decoration-line: none;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.body-text {
+  font-weight: 500; /* Medium */
+  font-size: 15px;
+  line-height: 25px;
+}
