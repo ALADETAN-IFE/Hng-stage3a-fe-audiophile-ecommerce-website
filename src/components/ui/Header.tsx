@@ -20,8 +20,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full h-auto flex justify-center items-center bg-black">
-      <section className="hidden lg:flex justify-between py-9 border-2 border-b-white/20 w-full max-w-[1109.83px] min-[2880px]:w-[1440px] h-20 md:gap-[317.5px] items-center px-4">
+    <header className="relative z-20 w-full h-auto flex justify-center items-center">
+      <section className="hidden lg:flex justify-between py-9 border-b-2 border-b-white/20 w-full max-w-[1109.83px] min-[2880px]:w-[1440px] h-20 md:gap-[317.5px] items-center px-4">
         <div className="flex items-center justify-between gap-[197px] bg-grey-500">
           <Image src={Logo} alt="Audiophile logo" className="max-w-full" />
           <nav className="flex justify-center items-center gap-[34px]">

@@ -8,6 +8,7 @@
   --hover-primary: #FBAF85;
   --hover-secondary: #4C4C4C; 
   --hover-tertiary: #000000;
+  --black-secondary: #101010;
 }
 
 * {
@@ -60,11 +61,12 @@
 }
 
 /* Typography utilities (Manrope) */
+/* Mobile */
 .h1 {
   font-weight: 700; /* Bold */
-  font-size: 56px;
-  line-height: 58px;
-  letter-spacing: 2px;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 1.29px;
   text-transform: uppercase;
 }
 
@@ -111,7 +113,7 @@
 .overline {
   font-weight: 400; /* Regular */
   font-size: 14px;
-  line-height: 19px;
+  line-height: auto;
   letter-spacing: 10px;
   text-transform: uppercase;
   text-decoration-line: none;
@@ -129,4 +131,155 @@
   font-weight: 500; /* Medium */
   font-size: 15px;
   line-height: 25px;
+}
+
+/* Tablet view */
+
+@media screen and (min-width: 768px) {
+  .h1 {
+    font-weight: 700; /* Bold */
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }  
+  
+  .h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  
+  .h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+  }
+  
+  .h4 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .h5 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+  }
+  
+  .h6 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+  }
+  
+  .overline {
+    font-weight: 400; /* Regular */
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-decoration-line: none;
+  }
+  
+  .subtitle {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .body-text {
+    font-weight: 500; /* Medium */
+    font-size: 15px;
+    line-height: 25px;
+  }
+  
+}
+
+/* Laptop/Bigger screens */
+@media screen and (min-width: 1024px) {
+  .h1 {
+    font-weight: 700; /* Bold */
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }  
+  
+  .h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  
+  .h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+  }
+  
+  .h4 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .h5 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+  }
+  
+  .h6 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+  }
+  
+  .overline {
+    font-weight: 400; /* Regular */
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-decoration-line: none;
+  }
+  
+  .subtitle {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .body-text {
+    font-weight: 500; /* Medium */
+    font-size: 15px;
+    line-height: 25px;
+  }
+  
 }
