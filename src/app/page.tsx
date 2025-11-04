@@ -2,9 +2,6 @@
 
 import { Button } from "@/components/common/Button";
 //  npx tsc --noEmit
-import sideHeadphone from "./assets/sideHeadphone2.png";
-import Speaker from "./assets/speaker.png";
-import Earphone from "./assets/earphone.png";
 import mobileSpeakerBg from "./assets/ZX9-SPEAKER-BG.png";
 import tabletSpeakerBg from "./assets/tabletZX9-SPEAKER-BG.png";
 import desktopSpeakerBg from "./assets/desktopZX9-SPEAKER-BG.png";
@@ -17,32 +14,10 @@ import BeforeFooter from "@/components/ui/BeforeFooter";
 import Image from "next/image";
 
 export default function Home() {
-  const cardData = [
-    {
-      img: sideHeadphone,
-      title: "HEADPHONES",
-      link: "/headphones"
-    },
-    {
-      img: Speaker,
-      title: "SPEAKERS",
-      link: "/speakers"
-    },
-    {
-      img: Earphone,
-      title: "EARPHONES",
-      link: "/earphones"
-    }
-  ]
-
   return (
     <main className="w-full flex justify-center items-center min-h-screen py-[120px] pb-50">
       <section className="flex w-9/10 max-w-[689px] lg:max-w-[1109.83px] min-[2880px]:w-[1440px] flex-col items-center gap-30 md:gap-24 lg:gap-42">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2.5 lg:gap-7.5 w-full justify-items-center">
-        {cardData.map((card, index) => (
-          <HomeCards key={index} card={card} index={index} />
-        ))}
-      </div>
+        <HomeCards />
       <section className="w-full flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-12">
         <div 
           className="relative w-full h-[600px] md:h-[1008px] lg:h-[560px] rounded-lg flex justify-center lg:justify-end items-end lg:items-center bg-(--primary)"  

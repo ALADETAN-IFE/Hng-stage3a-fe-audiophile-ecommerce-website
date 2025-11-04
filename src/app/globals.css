@@ -74,9 +74,9 @@
 
 .h2 {
   font-weight: 700;
-  font-size: 40px;
-  line-height: 44px;
-  letter-spacing: 1.5px;
+  font-size: 28px;
+  /* line-height: 44px; */
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
@@ -262,7 +262,7 @@
   .overline {
     font-weight: 400; /* Regular */
     font-size: 14px;
-    line-height: 19px;
+    /* line-height: 19px; */
     letter-spacing: 10px;
     text-transform: uppercase;
     text-decoration-line: none;
