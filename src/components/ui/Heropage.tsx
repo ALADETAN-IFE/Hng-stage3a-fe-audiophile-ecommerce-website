@@ -48,8 +48,8 @@ export default function Heropage() {
               <div className="flex flex-col gap-10 items-center justify-center md:items-baseline">
                 <div className="flex flex-col gap-6 items-center justify-center w-full max-w-[328px] md:w-auto md:items-baseline md:max-w-[398px]">
                   <Typography variant="overline" className="text-white/49">NEW PRODUCT</Typography>
-                  <Typography variant="h1" className="text-white max-sm:text-center ">XX99 Mark II Headphones</Typography>
-                  <Typography variant="body" className="text-white/75 max-sm:text-center md:max-w-[349px]">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</Typography>
+                  <Typography variant="h1" className="text-white max-md:text-center ">XX99 Mark II Headphones</Typography>
+                  <Typography variant="body" className="text-white/75 max-md:text-center md:max-w-[349px]">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</Typography>
                 </div>
                 <Button onClick={() => console.log("see product")}>SEE PRODUCT</Button>
               </div>
