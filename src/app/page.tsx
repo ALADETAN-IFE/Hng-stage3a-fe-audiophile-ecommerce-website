@@ -12,8 +12,10 @@ import HomeCards from "@/components/pages/Home/homeCards";
 import Typography from "@/components/common/Typography";
 import BeforeFooter from "@/components/ui/BeforeFooter";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <main className="w-full flex justify-center items-center min-h-screen py-[120px] pb-50">
       <section className="flex w-9/10 max-w-[689px] lg:max-w-[1109.83px] min-[2880px]:w-[1440px] flex-col items-center gap-30 md:gap-24 lg:gap-42">
@@ -56,7 +58,7 @@ export default function Home() {
               <Typography variant="h1" className="text-center lg:text-left text-white">ZX9 SPEAKER</Typography>
               <Typography variant="body" className="text-center lg:text-left text-white/75 font-normal!">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</Typography>
             </div>
-            <Button variant="secondary" onClick={() => console.log("see product")}>SEE PRODUCT</Button>
+            <Button variant="secondary" onClick={() => router.push(`/details/${encodeURIComponent("ZX9 SPEAKER")}`)}>SEE PRODUCT</Button>
           </div>
         </div>
         <div className="h-80 w-full bg-no-repeat  md:bg-position-[100%_95%] bg-size-[100%] speakerZXY rounded-lg"
@@ -76,7 +78,7 @@ export default function Home() {
 
           <div className="w-[204px] h-full flex flex-col justify-center ml-6 md:ml-[62px] lg:ml-[95px] items-center gap-8">
             <Typography variant="h4">ZX7 SPEAKER</Typography>
-            <Button variant="outline" className="bg-transparent!">SEE PRODUCT</Button>
+            <Button variant="outline" className="bg-transparent!" onClick={() => router.push(`/details/${encodeURIComponent("ZX7 SPEAKER")}`)}>SEE PRODUCT</Button>
           </div>
         </div>
 
@@ -92,7 +94,7 @@ export default function Home() {
           <div className="h-full w-full bg-(--hash-white) flex justify-baseline items-center rounded-lg max-w-[540px] min-h-[200px]">
            <div className="w-[204px] h-full flex flex-col justify-center ml-6 md:ml-[41px] lg:ml-[95px] items-center gap-8">
             <Typography variant="h4">ZX7 SPEAKER</Typography>
-            <Button variant="outline" className="bg-transparent!">SEE PRODUCT</Button>
+            <Button variant="outline" className="bg-transparent!" onClick={() => router.push(`/details/${encodeURIComponent("ZX7 SPEAKER")}`)}>SEE PRODUCT</Button>
           </div>
           </div>
 

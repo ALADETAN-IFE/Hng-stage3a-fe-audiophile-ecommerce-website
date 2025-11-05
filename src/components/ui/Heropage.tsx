@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { usePathname } from "next/navigation";
 import Header from "./Header";
@@ -8,11 +8,14 @@ import Image from "next/image";
 import Headphone from "../../app/assets/mobileHeadPhone3.png";
 import laptopBg from "../../app/assets/laptopbg.png";
 import Headphone2 from "../../app/assets/laptopHeadphone.png";
+import { useRouter } from "next/navigation";
 // import Headphone2 from "../../app/assets/Headphone.png"
 
 export default function Heropage() {
   const pathname = usePathname();
+  console.log("pathname", pathname)
 
+  const router = useRouter();
   const page = pathname.split("/").pop();
 
   // RADIAL GRADIENT STYLE: Fades from transparent center to solid #101010 edges
@@ -21,7 +24,16 @@ export default function Heropage() {
       "radial-gradient(circle at center, rgba(16, 16, 16, 0.0) 20%, #101010 100%)",
   };
   return (
-    <section className={`bg-black relative flex flex-col w-full items-center pb-6 ${page !== "" ? "md:h-[336px] gap-8" : "h-auto"}`}>
+    <section
+      className={`bg-black relative flex flex-col w-full items-center pb-6 ${
+        page !== "" ? "md:h-[336px] gap-8" : "h-auto"
+      } ${
+        page !== "" &&
+        (!page?.includes("details"))
+          ? "h-auto! pb-0!"
+          : ""
+      }`}
+    >
       {/* 1. Background Image and Radial Gradient Overlay Container (Layer 1) */}
       {/* This container ensures the image and gradient cover the entire section */}
       {page == "" && (
@@ -45,7 +57,14 @@ export default function Heropage() {
       )}
       <Header />
       <div
-        className={`relative w-full md:w-9/10 max-w-[1109.83px] min-[2880px]:w-[1440px] flex justify-between items-center py-[9px] ${page !== "" &&"justify-center h-full " }`}
+        className={`relative w-full md:w-9/10 max-w-[1109.83px] min-[2880px]:w-[1440px] flex justify-between items-center py-[9px] ${
+          page !== "" && "justify-center h-full "
+        } ${
+        page !== "" &&
+        (!page?.includes("details"))
+          ? "hidden"
+          : ""
+      }`}
       >
         {page == "" && (
           <section className="flex z-30 gap-10 items-center justify-center relative w-full min-h-[600px] md:justify-between">
@@ -68,7 +87,13 @@ export default function Heropage() {
                   quality made for the passionate music enthusiast.
                 </Typography>
               </div>
-              <Button onClick={() => console.log("see product")}>
+              <Button
+                onClick={() =>
+                  router.push(`/details/${encodeURIComponent(
+                    "XX99 Mark II Headphones"
+                  )}`)
+                }
+              >
                 SEE PRODUCT
               </Button>
             </div>
@@ -82,14 +107,19 @@ export default function Heropage() {
             />
           </section>
         )}
-        {page !== "" && (
-          <Typography
-            variant="h2"
-            className="text-white uppercase text-center w-full"
-          >
-            {page}
-          </Typography>
-        )}
+        
+        {page &&
+          page !== "" &&
+          (page === "headphones" ||
+            page === "earphones" ||
+            page === "speakers") && (
+            <Typography
+              variant="h2"
+              className="text-white uppercase text-center w-full"
+            >
+              {page}
+            </Typography>
+          )}
       </div>
     </section>
   );

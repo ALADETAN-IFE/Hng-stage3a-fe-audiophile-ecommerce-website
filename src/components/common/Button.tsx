@@ -1,7 +1,7 @@
 import * as React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'icon';
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'icon' | 'goBack';
   size?: 'default';
   asChild?: boolean;
 }
@@ -16,6 +16,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className = "
       outline: "tertiary-button",
       destructive: "bg-red-500 text-white hover:bg-red-600",
       icon: "",
+      goBack: "bg-transparent border-none p-0! text-black hover:brightness-95 font-normal! text-[15px]! leading-[25px]! text-black/50 tracking-[0px]! capitalize!",
     };
 
     const sizeClasses = {
