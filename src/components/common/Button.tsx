@@ -35,16 +35,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className = "
         (child.props && (child.props as { className?: string }).className) ||
         "";
 
-      // Only forward ref for DOM elements (type is string). For function/class components
-      // refs must be forwarded explicitly; avoid passing ref to them to prevent warnings.
       const cloneProps: Record<string, unknown> = {
         className: `${variant === 'icon' ?  '' : classes} ${childClassName}`.trim(),
         ...rest,
       };
 
       if (typeof child.type === "string") {
-        // DOM element - safe to forward ref
-        // assign ref using an explicit typed slot to avoid `any` usage
         (cloneProps as unknown as { ref?: React.Ref<HTMLButtonElement> }).ref =
           ref;
       }

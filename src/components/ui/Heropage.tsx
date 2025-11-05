@@ -18,7 +18,6 @@ export default function Heropage() {
   const router = useRouter();
   const page = pathname.split("/").pop();
 
-  // RADIAL GRADIENT STYLE: Fades from transparent center to solid #101010 edges
   const radialGradientStyle = {
     background:
       "radial-gradient(circle at center, rgba(16, 16, 16, 0.0) 20%, #101010 100%)",
@@ -34,13 +33,9 @@ export default function Heropage() {
           : ""
       }`}
     >
-      {/* 1. Background Image and Radial Gradient Overlay Container (Layer 1) */}
-      {/* This container ensures the image and gradient cover the entire section */}
       {page == "" && (
         <div className="md:hidden absolute inset-0 z-10 overflow-hidden">
-          {/* Image (must be inside this layer) */}
           <div className="absolute inset-0 flex justify-center items-end">
-            {/* The height is set to be responsive but fill the bottom area */}
             <Image
               src={Headphone}
               alt="XX99 Mark II Headphones"
@@ -48,7 +43,6 @@ export default function Heropage() {
             />
           </div>
 
-          {/* Radial Gradient Overlay (applied over the image, below the text) */}
           {/* <div 
               className="absolute inset-0"
               style={radialGradientStyle}
@@ -101,8 +95,8 @@ export default function Heropage() {
               className="relative hidden md:inline-flex w-auto"
               style={{
                 background: `radial-gradient(circle at center, rgba(16, 16, 16, 0.0) 20%, #101010 100%), url("../../app/assets/laptopHeadphone.png")`,
-                backgroundSize: "cover", // Recommended to ensure the image covers the area
-                backgroundPosition: "center", // Recommended to center the image
+                backgroundSize: "cover",
+                backgroundPosition: "center"
               }}
             />
           </section>

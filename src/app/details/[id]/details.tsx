@@ -18,7 +18,7 @@ interface PageProps {
 export default function DetailsPageClient({ id }: PageProps) {
   console.log("details id =", id);
   const router = useRouter();
-  // products are loaded from ./products
+
   const product = getProductByTitle(id);
   return (
     <main className="w-full flex justify-center items-center min-h-screen pt-[79px] pb-40">

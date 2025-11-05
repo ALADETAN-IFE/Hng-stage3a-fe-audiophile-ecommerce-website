@@ -15,8 +15,6 @@ export default function GridView({ title }: { title: string }) {
           <Image
             src={image.imgSrc}
             alt={image.altText}
-            // width={100}
-            // height={100}
             className="w-full h-full rounded-lg"
 
           />

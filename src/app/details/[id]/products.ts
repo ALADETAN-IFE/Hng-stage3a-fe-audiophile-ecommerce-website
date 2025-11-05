@@ -142,11 +142,9 @@ export const products: Product[] = [
 
 export function normalizeForCompare(s: string) {
   if (!s) return "";
-  // decode URL-encoded values, replace dashes with spaces, collapse whitespace and lowercase
   try {
     s = decodeURIComponent(s);
   } catch {
-    // ignore decode errors and use original
   }
   return s.replace(/-/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
 }

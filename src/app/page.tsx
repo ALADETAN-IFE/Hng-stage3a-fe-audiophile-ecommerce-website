@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from "@/components/common/Button";
-//  npx tsc --noEmit
 import mobileSpeakerBg from "./assets/ZX9-SPEAKER-BG.png";
 import tabletSpeakerBg from "./assets/tabletZX9-SPEAKER-BG.png";
 import desktopSpeakerBg from "./assets/desktopZX9-SPEAKER-BG.png";
