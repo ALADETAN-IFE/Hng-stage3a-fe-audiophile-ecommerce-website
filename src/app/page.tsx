@@ -77,7 +77,7 @@ export default function Home() {
 
           <div className="w-[204px] h-full flex flex-col justify-center ml-6 md:ml-[62px] lg:ml-[95px] items-center gap-8">
             <Typography variant="h4">ZX7 SPEAKER</Typography>
-            <Button variant="outline" className="bg-transparent!" onClick={() => router.push(`/details/${encodeURIComponent("ZX7 SPEAKER")}`)}>SEE PRODUCT</Button>
+            <Button variant="outline" onClick={() => router.push(`/details/${encodeURIComponent("ZX7 SPEAKER")}`)}>SEE PRODUCT</Button>
           </div>
         </div>
 
@@ -92,8 +92,8 @@ export default function Home() {
 
           <div className="h-full w-full bg-(--hash-white) flex justify-baseline items-center rounded-lg max-w-[540px] min-h-[200px]">
            <div className="w-[204px] h-full flex flex-col justify-center ml-6 md:ml-[41px] lg:ml-[95px] items-center gap-8">
-            <Typography variant="h4">ZX7 SPEAKER</Typography>
-            <Button variant="outline" className="bg-transparent!" onClick={() => router.push(`/details/${encodeURIComponent("ZX7 SPEAKER")}`)}>SEE PRODUCT</Button>
+            <Typography variant="h4">YX1 EARPHONES</Typography>
+            <Button variant="outline" onClick={() => router.push(`/details/${encodeURIComponent("YX1 EARPHONES")}`)}>SEE PRODUCT</Button>
           </div>
           </div>
 
