@@ -1,11 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Typography from "../common/Typography";
 import { Button } from "../common/Button";
 import IncreaseButton from "@/components/common/IncreaseButton";
-import { InTheBoxItem } from "@/app/details/[id]/products";
 import { useRouter } from "next/navigation";
+import { addToCart } from "@/utils/cart";
 
 interface pageProductcardProps {
   card: {
@@ -15,8 +16,6 @@ interface pageProductcardProps {
     title: string;
     desc: string;
     price?: string;
-    features?: string[];
-    inTheBox?: InTheBoxItem[];
   };
   detailsPage?: boolean;
   index?: number;
@@ -30,13 +29,40 @@ export default function PageProductcard({
     desc = "",
     img,
     price = "",
-    features = [""],
-    inTheBox = [],
   },
   index,
   detailsPage = false,
 }: pageProductcardProps) {
-   const router = useRouter();
+  const router = useRouter();
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAddToCart = () => {
+    if (!price) return;
+    
+    // Extract numeric price from string like "$ 2,999"
+    const numericPrice = parseInt(price.replace(/[^0-9]/g, ''));
+
+    let cartTitle = title;
+    
+    if(title.toLowerCase().includes("headphones")){
+      cartTitle = title.replace(/\s*headphones\s*/gi, '').trim();
+    } else if(title.toLowerCase().includes("speaker")){
+      cartTitle = title.replace(/\s*speaker\s*/gi, '').trim();
+    } else if(title.toLowerCase().includes("wireless earphones")){
+      cartTitle = title.replace(/\s*earphones\s*/gi, '').trim();
+      cartTitle = title.replace(/\s*wireless\s*/gi, '').trim();
+    }
+    
+    addToCart({
+      id: title,
+      title: cartTitle,
+      price: numericPrice,
+      quantity: quantity,
+    });
+    
+    setQuantity(1);
+  };
+
   return (
     <div
       className={`w-full lg:h-[560px] flex flex-col ${
@@ -73,10 +99,10 @@ export default function PageProductcard({
         ) : (
           <div className="flex items-center gap-4">
             <IncreaseButton
-              initial={1}
-              onChange={(v) => console.log("qty", v)}
+              initial={quantity}
+              onChange={(v) => setQuantity(v)}
             />
-            <Button onClick={() => console.log("add to cart")}>
+            <Button onClick={handleAddToCart}>
               ADD TO CART
             </Button>
           </div>

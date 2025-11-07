@@ -33,7 +33,7 @@ export const gridImages: AlsoLikeImage[] = [
       },
       {
         imgSrc: ZX9_SPEAKER,
-        altText: "ZX9 SPEAKER Headphones",
+        altText: "ZX9 SPEAKER",
         text: "ZX9 SPEAKER",
       },
     ],

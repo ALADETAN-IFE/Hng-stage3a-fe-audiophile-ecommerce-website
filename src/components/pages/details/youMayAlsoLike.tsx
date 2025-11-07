@@ -29,7 +29,7 @@ export default function YouMayAlsoLike({ title }: { title: string }) {
             <Typography variant="h6" className="text-center">
               {image.text}
             </Typography>
-            <Button onClick={() => router.push(`/details/${encodeURIComponent(image.text)}`)}>
+            <Button onClick={() => router.push(`/details/${encodeURIComponent(image.altText)}`)}>
               SEE PRODUCT
             </Button>
 

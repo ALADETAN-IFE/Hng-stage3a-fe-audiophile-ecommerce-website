@@ -16,26 +16,22 @@ export default function IncreaseButton({
   className = "",
 }: IncreaseButtonProps) {
   const [value, setValue] = useState<number>(initial);
-  const [decreaseValue, setDecreaseValue] = useState<boolean>(false);
-  const [increaseValue, setIncreaseValue] = useState<boolean>(false);
 
   useEffect(() => {
     setValue(initial);
   }, [initial]);
 
   const decrease = () => {
-    setIncreaseValue(false)
-    setDecreaseValue(true)
-    const next = Math.max(min, value - 1);
-    if (next !== value) {
-      setValue(next);
-      if (onChange) onChange(next);
+    if (value <= min) {
+      if (onChange) onChange(0);
+      return;
     }
+    const next = value - 1;
+    setValue(next);
+    if (onChange) onChange(next);
   };
 
   const increase = () => {
-    setDecreaseValue(false)
-    setIncreaseValue(true)
     const next = value + 1;
     setValue(next);
     if (onChange) onChange(next);
@@ -43,13 +39,12 @@ export default function IncreaseButton({
 
   return (
     <div
-      className={`flex items-center justify-center text-[13px] font-bold transition-colors bg-(--hash-white) px-[15.5px] py-[15px] gap-[21px] ${className}`}
+      className={`flex items-center justify-center text-[13px] transition-colors bg-(--hash-white) px-[15.5px] py-[15px] gap-[21px] ${className}`}
     >
       <button
         aria-label="decrease"
         onClick={decrease}
-        className="text-black/25 hover:text-(--primary) cursor-pointer disabled:opacity-50"
-        disabled={value <= min}
+        className="text-black/25 hover:text-(--primary) cursor-pointer"
       >
         –
       </button>

@@ -76,7 +76,7 @@ Email must include:
 - Accessibility: Forms, navigation, and errors must be screen-reader friendly.
 - Code quality: Clean, modular, and well-documented.
 
-## :clock3: Submission Mode
+## Submission Mode
 
 - Deploy your project (Vercel or Netlify recommended).
 
