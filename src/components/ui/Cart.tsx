@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
@@ -7,6 +7,7 @@ import { Button } from "../common/Button";
 import IncreaseButton from "../common/IncreaseButton";
 import { getCartItems, updateCartItemQuantity, clearCart } from "@/utils/cart";
 import { products } from "@/app/details/[id]/products";
+import { useRouter } from "next/navigation";
 
 interface CartItem {
   id: string;
@@ -18,8 +19,8 @@ interface CartItem {
 
 export default function CartUI() {
   const [carts, setCarts] = useState<CartItem[]>([]);
+  const router = useRouter();
 
-  // Load cart from localStorage and map to display format
   useEffect(() => {
     const loadCart = () => {
       const cartItems = getCartItems();
@@ -91,6 +92,13 @@ export default function CartUI() {
     setCarts([]);
   };
 
+  const checkOut = () => {
+    if(carts.length < 1) {
+      return null
+    }
+    router.push("/checkout")
+  }
+
   return (
     <div className="absolute top-full z-99 h-screen w-full bg-black/40 flex justify-center ">
       <div className="relative md:w-9/10 max-w-[1109.83px] min-[2880px]:w-[1440px] top-5 flex justify-end">
@@ -141,7 +149,7 @@ export default function CartUI() {
             </Typography>
             <Typography variant="h6">$ {formattedtotalPrice}</Typography>
           </div>
-          <Button className="w-full">checkout</Button>
+          <Button className="w-full" onClick={checkOut}>checkout</Button>
         </div>
       </div>
     </div>

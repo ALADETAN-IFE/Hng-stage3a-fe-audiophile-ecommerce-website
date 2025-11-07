@@ -8,12 +8,38 @@ import Link from "next/link";
 import { Button } from "../common/Button";
 import { usePathname } from "next/navigation";
 import { MdOutlineMenu } from "react-icons/md";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CartUI from "./Cart";
+import { getCartLength } from "@/utils/cart";
 
 export default function Header() {
   const pathname = usePathname() ?? "/";
-  const [showCart, setShowCart] = useState<boolean>(false)
+  const [showCart, setShowCart] = useState<boolean>(false);
+  const [cartCount, setCartCount] = useState<number>(0);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      setCartCount(getCartLength());
+    };
+
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'audiophile_cart') {
+        updateCartCount();
+      }
+    };
+
+    // Initial load
+    updateCartCount();
+
+    // Listen for cart updates
+    window.addEventListener('cartUpdated', updateCartCount);
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('cartUpdated', updateCartCount);
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
 
   const nav = [
     { href: "/", label: "Home" },
@@ -21,6 +47,8 @@ export default function Header() {
     { href: "/speakers", label: "Speakers" },
     { href: "/earphones", label: "Earphone" },
   ];
+
+  
 
   return (
     <header className="relative z-20 w-full h-auto flex justify-center items-center">
@@ -51,8 +79,13 @@ export default function Header() {
             })}
           </nav>
         </div>
-        <Button onClick={() => setShowCart(!showCart)} className="p-0!" variant="icon">
+        <Button onClick={() => setShowCart(!showCart)} className="relative p-0!" variant="icon">
           <Image src={Cart} alt="Cart" />
+          {cartCount > 0 && (
+            <span className="bg-(--primary) text-[10px] text-white absolute bottom-3 left-4 rounded-full flex justify-center items-center h-4.5 w-4.5">
+              {cartCount}
+            </span>
+          )}
         </Button>
       </section>
 
@@ -64,8 +97,13 @@ export default function Header() {
         </Button>
           <Image src={Logo} alt="Audiophile logo" className="ml-4" />
         </div>
-        <Button onClick={() => setShowCart(!showCart)} className="p-0!" variant="icon">
+        <Button onClick={() => setShowCart(!showCart)} className="relative p-0!" variant="icon">
           <Image src={Cart} alt="Cart" />
+          {cartCount > 0 && (
+            <span className="bg-(--primary) text-[10px] text-white absolute bottom-3 left-4 rounded-full flex justify-center items-center h-4.5 w-4.5">
+              {cartCount}
+            </span>
+          )}
         </Button>
       </section>
       
@@ -75,8 +113,13 @@ export default function Header() {
           <MdOutlineMenu color="white" size="32"/>
         </Button>
           <Image src={Logo} alt="Audiophile logo" className="ml-4" />
-        <Button onClick={() => setShowCart(!showCart)} className="p-0!" variant="icon">
+        <Button onClick={() => setShowCart(!showCart)} className="relative p-0!" variant="icon">
           <Image src={Cart} alt="Cart" />
+          {cartCount > 0 && (
+            <span className="bg-(--primary) text-[10px] text-white absolute bottom-3 left-4 rounded-full flex justify-center items-center h-4.5 w-4.5">
+              {cartCount}
+            </span>
+          )}
         </Button>
       </section>
 
