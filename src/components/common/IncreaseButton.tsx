@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from "react";
 
@@ -16,25 +16,29 @@ export default function IncreaseButton({
   className = "",
 }: IncreaseButtonProps) {
   const [value, setValue] = useState<number>(initial);
+  const [decreaseValue, setDecreaseValue] = useState<boolean>(false);
+  const [increaseValue, setIncreaseValue] = useState<boolean>(false);
 
   useEffect(() => {
     setValue(initial);
   }, [initial]);
 
   const decrease = () => {
-    setValue((value) => {
-      const next = Math.max(min, value - 1);
-      if (next !== value && onChange) onChange(next);
-      return next;
-    });
+    setIncreaseValue(false)
+    setDecreaseValue(true)
+    const next = Math.max(min, value - 1);
+    if (next !== value) {
+      setValue(next);
+      if (onChange) onChange(next);
+    }
   };
 
   const increase = () => {
-    setValue((value) => {
-      const next = value + 1;
-      if (onChange) onChange(next);
-      return next;
-    });
+    setDecreaseValue(false)
+    setIncreaseValue(true)
+    const next = value + 1;
+    setValue(next);
+    if (onChange) onChange(next);
   };
 
   return (
