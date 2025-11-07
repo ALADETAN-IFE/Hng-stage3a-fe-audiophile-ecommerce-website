@@ -113,21 +113,21 @@ export const gridImages: GridImage[] = [
     ],
   },
   {
-    title: "ZX7 Headphones",
+    title: "ZX7 Speaker",
     images: [
       {
         imgSrc: gridImage13,
-        altText: "ZX7 Headphones Gallery Image 1",
+        altText: "ZX7 Speaker Gallery Image 1",
         styling: "w-full max-sm:h-[174px] md:col-start-1"
       },
       {
         imgSrc: gridImage14,
-        altText: "ZX7 Headphones Gallery Image 2",
+        altText: "ZX7 Speaker Gallery Image 2",
         styling: "max-sm:w-full max-sm:h-[174px] md:col-start-1"
       },
       {
         imgSrc: gridImage15,
-        altText: "ZX7 Headphones Gallery Image 3",
+        altText: "ZX7 Speaker Gallery Image 3",
         styling: "h-full! max-sm:h-[368px] md:col-start-2 md:row-start-1 row-span-2"
       },
     ],

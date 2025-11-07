@@ -57,7 +57,7 @@ export default function Home() {
               <Typography variant="h1" className="text-center lg:text-left text-white">ZX9 SPEAKER</Typography>
               <Typography variant="body" className="text-center lg:text-left text-white/75 font-normal!">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</Typography>
             </div>
-            <Button variant="secondary" onClick={() => router.push(`/details/${encodeURIComponent("ZX9 SPEAKER")}`)}>SEE PRODUCT</Button>
+            <Button variant="secondary" className="hover:bg-(--hover-secondary)! hover:border-(--hover-secondary)!" onClick={() => router.push(`/details/${encodeURIComponent("ZX9 SPEAKER")}`)}>SEE PRODUCT</Button>
           </div>
         </div>
         <div className="h-80 w-full bg-no-repeat  md:bg-position-[100%_95%] bg-size-[100%] speakerZXY rounded-lg"

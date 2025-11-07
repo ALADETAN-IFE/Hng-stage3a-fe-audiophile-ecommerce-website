@@ -34,7 +34,7 @@ export default function DetailsPageClient({ id }: PageProps) {
                 </Button>
               <PageProductcard card={product!} detailsPage />
             </div>
-            <div className="w-full flex flex-col lg:flex-row justify-between items-baseline gap-[88px] md:gap-30 lg:gap-[125px] bg-green-400">
+            <div className="w-full flex flex-col lg:flex-row justify-between items-baseline gap-[88px] md:gap-30 lg:gap-[125px]">
               <div className="w-full max-w-[635px] flex flex-col items-center lg:items-start gap-6 lg:gap-8">
                 <Typography variant="h3" className="text-left w-full">FEATURES</Typography>
                 <article className="w-full flex flex-col gap-7 text-left">
@@ -46,7 +46,7 @@ export default function DetailsPageClient({ id }: PageProps) {
                   </Typography>
                 </article>
               </div>
-              <div className="w-full max-w-[350px] flex flex-col gap-8 bg-blue-500 max-md:flex-row md:max-w-[549px] justify-between">
+              <div className="w-full max-w-[350px] lg:w-[350px] flex flex-col gap-8 md:flex-row lg:flex-col md:max-w-[549px] justify-between">
                 <Typography variant="h3">in the box</Typography>
                 <article className="w-full flex flex-col gap-7 text-center lg:text-left  max-w-[194px]">
                   {product?.inTheBox?.map((item, index) => (
@@ -62,7 +62,7 @@ export default function DetailsPageClient({ id }: PageProps) {
                       </Typography>
                       <Typography
                         variant="body"
-                        className="text-left font-normal! text-black/50"
+                        className="text-left font-normal! text-black/50 min-w-[171px]"
                       >
                         {item.item}
                       </Typography>

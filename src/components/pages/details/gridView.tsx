@@ -9,14 +9,13 @@ export default function GridView({ title }: { title: string }) {
   }
 
   return (
-  <div className="grid grid-cols-1 md:grid-cols-[277px_395px] md:grid-rows-2 gap-8 md:h-[368px] lg:h-[592px] lg:grid-cols-[445px_635px] w-full">
+  <div className="rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-[277px_395px] md:grid-rows-2 gap-8 md:h-[368px] lg:h-[592px] lg:grid-cols-[445px_635px] w-full">
       {gridImages.images.map((image, index) => (
-        <div key={index} className={`rounded-lg ${image.styling}`}>
+        <div key={index} className={`rounded-lg ${image.styling} w-full h-full`}>
           <Image
             src={image.imgSrc}
             alt={image.altText}
             className="w-full h-full rounded-lg"
-
           />
         </div>
       ))}
