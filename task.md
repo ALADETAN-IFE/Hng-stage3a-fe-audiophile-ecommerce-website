@@ -1,6 +1,6 @@
-# :rocket: Frontend Wizards, Here’s Your Stage 3a Task! :rocket:
+# Frontend Wizards, Here’s Your Stage 3a Task!
 
-Welcome to Stage 3 — time to push beyond SaaS and tackle a real-world, pixel-perfect e-commerce build! :tada:
+Welcome to Stage 3 — time to push beyond SaaS and tackle a real-world, pixel-perfect e-commerce build!
 
 In this stage, you’ll bring the Audiophile e-commerce Figma design to life using React/Next.js, integrate a backend with Convex, and implement a functional checkout that sends users a confirmation email.
 
@@ -8,7 +8,7 @@ In this stage, you’ll bring the Audiophile e-commerce Figma design to life usi
 
 - :point_right: Audiophile E-commerce Website
 
-## :books: Study Material
+## Study Material
 
 - React Official Docs: https://react.dev/
 - Next.js Docs: https://nextjs.org/docs
