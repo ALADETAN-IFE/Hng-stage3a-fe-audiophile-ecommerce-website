@@ -8,9 +8,12 @@ import Link from "next/link";
 import { Button } from "../common/Button";
 import { usePathname } from "next/navigation";
 import { MdOutlineMenu } from "react-icons/md";
+import { useState } from "react";
+import CartUI from "./Cart";
 
 export default function Header() {
   const pathname = usePathname() ?? "/";
+  const [showCart, setShowCart] = useState<boolean>(false)
 
   const nav = [
     { href: "/", label: "Home" },
@@ -48,7 +51,7 @@ export default function Header() {
             })}
           </nav>
         </div>
-        <Button onClick={() => console.log("hello")} className="p-0!" variant="icon">
+        <Button onClick={() => setShowCart(!showCart)} className="p-0!" variant="icon">
           <Image src={Cart} alt="Cart" />
         </Button>
       </section>
@@ -61,7 +64,7 @@ export default function Header() {
         </Button>
           <Image src={Logo} alt="Audiophile logo" className="ml-4" />
         </div>
-        <Button onClick={() => console.log("hello")} className="p-0!" variant="icon">
+        <Button onClick={() => setShowCart(!showCart)} className="p-0!" variant="icon">
           <Image src={Cart} alt="Cart" />
         </Button>
       </section>
@@ -72,10 +75,12 @@ export default function Header() {
           <MdOutlineMenu color="white" size="32"/>
         </Button>
           <Image src={Logo} alt="Audiophile logo" className="ml-4" />
-        <Button onClick={() => console.log("hello")} className="p-0!" variant="icon">
+        <Button onClick={() => setShowCart(!showCart)} className="p-0!" variant="icon">
           <Image src={Cart} alt="Cart" />
         </Button>
       </section>
+
+      {showCart && <CartUI  />}
     </header>
   );
 }

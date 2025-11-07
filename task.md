@@ -6,7 +6,7 @@ In this stage, you’ll bring the Audiophile e-commerce Figma design to life usi
 
 ## Figma (Pixel-perfect source of truth)
 
-- :point_right: Audiophile E-commerce Website
+- Audiophile E-commerce Website
 
 ## Study Material
 
@@ -23,7 +23,7 @@ In this stage, you’ll bring the Audiophile e-commerce Figma design to life usi
 
 ---
 
-## :memo: Stage 3 — Pixel Perfect Audiophile Build
+## Stage 3 — Pixel Perfect Audiophile Build
 
 ### Requirements
 
@@ -66,7 +66,7 @@ Email must include:
 
 - Must be responsive and well-formatted.
 
-## :white_check_mark: Acceptance Criteria
+## Acceptance Criteria
 
 - Pixel-perfect build: Matches Figma across all screen sizes.
 - Checkout works end-to-end: Orders saved in Convex, confirmation email sent.

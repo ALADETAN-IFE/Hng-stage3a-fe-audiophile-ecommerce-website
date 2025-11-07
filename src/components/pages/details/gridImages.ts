@@ -93,21 +93,21 @@ export const gridImages: GridImage[] = [
     ],
   },
   {
-    title: "ZX9 Headphones",
+    title: "ZX9 Speaker",
     images: [
       {
         imgSrc: gridImage10,
-        altText: "ZX9 Headphones Gallery Image 1",
+        altText: "ZX9 Speaker Gallery Image 1",
         styling: "w-full max-sm:h-[174px] md:col-start-1"
       },
       {
         imgSrc: gridImage11,
-        altText: "ZX9 Headphones Gallery Image 2",
+        altText: "ZX9 Speaker Gallery Image 2",
         styling: "max-sm:w-full max-sm:h-[174px] md:col-start-1"
       },
       {
         imgSrc: gridImage12,
-        altText: "ZX9 Headphones Gallery Image 3",
+        altText: "ZX9 Speaker Gallery Image 3",
         styling: "h-full! max-sm:h-[368px] md:col-start-2 md:row-start-1 row-span-2"
       },
     ],
@@ -155,7 +155,6 @@ export const gridImages: GridImage[] = [
 ];
 
 export function getGridImagesByTitle(title: string) {
-  const normalizedId = normalizeForCompare(title);
-  console.log("normalizedId =", normalizedId);
+  const normalizedId = normalizeForCompare(title); 
   return gridImages.find((p) => normalizeForCompare(p.title) === normalizedId);
 }

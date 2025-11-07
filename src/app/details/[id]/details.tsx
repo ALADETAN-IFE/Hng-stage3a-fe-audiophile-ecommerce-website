@@ -9,6 +9,7 @@ import PageProductcard from "@/components/pages/pageProductcard";
 import { Button } from "@/components/common/Button";
 import GridView from "@/components/pages/details/gridView";
 import { useRouter } from 'next/navigation';
+import YouMayAlsoLike from "@/components/pages/details/youMayAlsoLike";
 
 
 interface PageProps {
@@ -72,8 +73,7 @@ export default function DetailsPageClient({ id }: PageProps) {
               </div>
             </div>
             <GridView title={id} />
-            <div className="w-full flex justify-center items-center">
-            </div>
+            <YouMayAlsoLike title={id} />
           </>
         ) : (
           <div className="w-full flex justify-center gap-7 flex-col items-center">
