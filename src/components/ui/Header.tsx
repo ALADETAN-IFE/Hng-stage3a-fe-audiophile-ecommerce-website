@@ -51,7 +51,7 @@ export default function Header() {
   
 
   return (
-    <header className="relative z-20 w-full h-auto flex justify-center items-center">
+    <header className="relative z-40 w-full h-auto flex justify-center items-center">
       <section className="hidden lg:flex justify-between py-9 border-b-2 border-b-white/20 w-full max-w-[1109.83px] min-[2880px]:w-[1440px] h-20 md:gap-[317.5px] items-center">
         <div className="flex items-center justify-between gap-[197px]">
           <Image src={Logo} alt="Audiophile logo" className="max-w-full" />
@@ -123,7 +123,7 @@ export default function Header() {
         </Button>
       </section>
 
-      {showCart && <CartUI  />}
+      {showCart && <CartUI  setShowCart={setShowCart} />}
     </header>
   );
 }

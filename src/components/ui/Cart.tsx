@@ -9,7 +9,7 @@ import { getCartItems, updateCartItemQuantity, clearCart } from "@/utils/cart";
 import { products } from "@/app/details/[id]/products";
 import { useRouter } from "next/navigation";
 
-interface CartItem {
+export interface CartItem {
   id: string;
   img: StaticImageData;
   title: string;
@@ -17,7 +17,7 @@ interface CartItem {
   quantity: number;
 }
 
-export default function CartUI() {
+export default function CartUI({setShowCart}: {setShowCart: (showCart: boolean) => void}) {
   const [carts, setCarts] = useState<CartItem[]>([]);
   const router = useRouter();
 
@@ -96,6 +96,7 @@ export default function CartUI() {
     if(carts.length < 1) {
       return null
     }
+    setShowCart(false)
     router.push("/checkout")
   }
 

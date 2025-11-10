@@ -17,7 +17,6 @@ interface PageProps {
 }
 
 export default function DetailsPageClient({ id }: PageProps) {
-  console.log("details id =", id);
   const router = useRouter();
 
   const product = getProductByTitle(id);
