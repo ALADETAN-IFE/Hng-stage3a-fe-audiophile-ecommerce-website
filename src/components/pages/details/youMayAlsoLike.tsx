@@ -16,9 +16,9 @@ export default function YouMayAlsoLike({ title }: { title: string }) {
       <Typography variant="h3" className="text-center">
         You May Also Like
       </Typography>
-      <div className="w-full flex flex-col md:flex-row gap-6">
+      <div className="w-full flex flex-col md:flex-row gap-6 items-center">
         {AlsoLikeImages.images.map((image, index) => (
-          <div key={index} className="w-[350px] h-full flex flex-col gap-7 items-center">
+          <div key={index} className="max-[350px]:w-full min-[350px]:w-[350px] h-full flex flex-col gap-7 items-center">
             <div className="bg-(--hash-white) rounded-lg w-full h-[350px] p-7 overflow-hidden">
               <Image
                 src={image.imgSrc}
