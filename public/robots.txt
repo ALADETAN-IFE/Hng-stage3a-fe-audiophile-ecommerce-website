@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://audiophile-ecommerce-website-hng-3a.vercel.app/sitemap.xml
+Host: https://audiophile-ecommerce-website-hng-3a.vercel.app
