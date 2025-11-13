@@ -3,6 +3,7 @@ import "./globals.css";
 // import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import Heropage from "@/components/ui/Heropage";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 export const metadataBase = new URL(
   "https://audiophile-ecommerce-website-hng-3a.vercel.app"
@@ -121,9 +122,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`antialiased`}>
-        <Heropage />
-        {children}
-        <Footer />
+        <ConvexClientProvider> 
+          <Heropage />
+          {children}
+          <Footer />
+        </ConvexClientProvider>  
       </body>
     </html>
   );
